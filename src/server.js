@@ -1,4 +1,4 @@
-import app from './app.js';
+import createApp from './app.js';
 
 const normalizePort = (value = process.env.PORT ?? '3003') => {
   const port = Number(value);
@@ -11,6 +11,7 @@ const normalizePort = (value = process.env.PORT ?? '3003') => {
 };
 
 const PORT = normalizePort(process.env.PORT ?? '3003');
+const app = createApp();
 
 const server = app.listen(PORT, () => {
   console.log(`🚀 Servidor rodando na porta ${PORT}`);
