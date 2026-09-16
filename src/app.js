@@ -1,7 +1,7 @@
 import express from "express";
 import helmet from "helmet";
 import rateLimit from "express-rate-limit";
-import db from "./database.js";
+import { createDatabase } from "./database.js";
 import { usuarios } from "./schema.js";
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -28,7 +28,7 @@ function validarUsuario(body) {
     return null;
 }
 
-export function createApp(database = db) {
+export function createApp(database = createDatabase()) {
     const app = express();
 
     app.disable("x-powered-by");
@@ -104,6 +104,10 @@ export function createApp(database = db) {
     app.use((error, _request, response, _next) => {
         if (error instanceof SyntaxError && "body" in error) {
             return response.status(400).json({ erro: "JSON inválido" });
+        }
+
+        if (error?.type === "entity.too.large") {
+            return response.status(413).json({ erro: "corpo da requisição excede o limite de 10 KB" });
         }
 
         console.error(error);

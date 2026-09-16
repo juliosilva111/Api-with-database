@@ -97,6 +97,24 @@ npm test
 ```
 
 Os testes usam um banco simulado e não alteram dados reais.
+O fluxo recomendado para cada funcionalidade é:
+
+1. Escrever um teste que descreva o comportamento esperado.
+2. Confirmar que o teste falha antes da implementação quando a funcionalidade ainda não existe.
+3. Implementar a rota ou regra necessária.
+4. Executar novamente os testes até que todos passem.
+5. Revisar casos válidos, entradas inválidas, erros do banco, limites e respostas HTTP.
+
+Os testes atuais cobrem:
+
+- health check e headers de segurança;
+- listagem e criação de usuários;
+- normalização de nome e e-mail;
+- validação de tipos, limites e campos obrigatórios;
+- JSON inválido e payload acima de `10 KB`;
+- e-mail duplicado;
+- rota inexistente e falhas do banco;
+- limite de requisições.
 
 O `.env` deve ficar fora do Git e nunca deve ser publicado. Se a credencial do banco já foi compartilhada ou commitada, ela deve ser rotacionada imediatamente no provedor e substituída localmente pela nova senha.
 
