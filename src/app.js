@@ -86,6 +86,10 @@ export function createApp(database = createDatabase()) {
             return response.status(400).json({ erro: "JSON inválido" });
         }
 
+        if (error?.type === "entity.too.large") {
+            return response.status(413).json({ erro: "corpo da requisição excede o limite de 10 KB" });
+        }
+
         console.error(error);
         return response.status(500).json({ erro: "Erro interno do servidor" });
     });
