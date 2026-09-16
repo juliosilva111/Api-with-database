@@ -62,6 +62,25 @@ Execute os testes com:
 npm test
 ```
 
+O fluxo recomendado para cada funcionalidade é:
+
+1. Escrever um teste que descreva o comportamento esperado.
+2. Confirmar que o teste falha antes da implementação quando a funcionalidade ainda não existe.
+3. Implementar a rota ou regra necessária.
+4. Executar novamente os testes até que todos passem.
+5. Revisar casos válidos, entradas inválidas, erros do banco, limites e respostas HTTP.
+
+Os testes atuais cobrem:
+
+- health check e headers de segurança;
+- listagem e criação de usuários;
+- normalização de nome e e-mail;
+- validação de tipos, limites e campos obrigatórios;
+- JSON inválido e payload acima de `10 KB`;
+- e-mail duplicado;
+- rota inexistente e falhas do banco;
+- limite de requisições.
+
 A API desativa `x-powered-by`, usa `helmet` para headers de segurança e limita requisições a 100 por IP em 15 minutos. O `.env` está ignorado pelo Git e nunca deve ser publicado.
 
 A credencial que estiver atualmente no `.env` deve ser rotacionada no provedor do banco se ela tiver sido compartilhada ou commitada. Depois, atualize o `.env` local com a nova credencial.
