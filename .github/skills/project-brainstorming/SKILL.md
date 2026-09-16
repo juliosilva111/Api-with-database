@@ -68,6 +68,6 @@ Para alterações pequenas e sem decisões relevantes, usar uma versão resumida
 - Preferir reutilizar padrões já existentes no projeto.
 - Manter compatibilidade com a API Express e PostgreSQL existentes.
 - Para o futuro frontend, integrar as skills `frontend-21st` e `gsap-frontend` somente quando componentes visuais ou animações forem necessários.
+- Para posicionamento, copy e fluxos de produto, usar `product-marketing-field-services` como contexto do nicho de serviços técnicos em campo.
 - Não incluir credenciais, dados reais ou segredos em exemplos, testes ou commits.
 - Depois da implementação, executar os testes relacionados e relatar claramente o resultado.
-
