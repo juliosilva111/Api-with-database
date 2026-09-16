@@ -122,3 +122,16 @@ O `.env` deve ficar fora do Git e nunca deve ser publicado. Se a credencial do b
 
 - `src/`: aplicação, conexão com banco, schema e bootstrap do servidor.
 - `test/`: testes automatizados das rotas com banco simulado.
+
+## Contexto do produto e skills
+
+O produto atende pequenas empresas B2B de serviços técnicos que trabalham em campo, como refrigeração, instalação de câmeras, redes, elétrica, manutenção, hidráulica e instalação de equipamentos.
+
+Mudanças relevantes de produto, arquitetura, segurança ou experiência devem atualizar este README para manter a documentação sincronizada com o código.
+
+As skills locais em `.github/skills/` orientam o desenvolvimento futuro:
+
+- `project-brainstorming`: esclarece objetivo, escopo, alternativas, contratos e testes antes de implementar.
+- `product-marketing-field-services`: orienta posicionamento, copy, fluxos e métricas para operações técnicas em campo.
+- `frontend-21st`: define padrões para o futuro frontend React com componentes reutilizáveis, temas e acessibilidade.
+- `gsap-frontend`: orienta animações GSAP com React, performance, cleanup e `prefers-reduced-motion`.
