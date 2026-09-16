@@ -5,3 +5,12 @@ node_modules/
 
 *.log
 .DS_Store
+coverage/
+dist/
+build/
+
+# Configurações pessoais do ambiente de desenvolvimento
+.github/agents/
+.github/skills/
+.github/copilot-instructions.md
+.vscode/

@@ -50,6 +50,16 @@ test("GET /health retorna status e headers de segurança", async () => {
     });
 });
 
+test("GET /api/v1/health retorna status e CORS", async () => {
+    await withServer(createDatabase(), async (baseUrl) => {
+        const response = await fetch(`${baseUrl}/api/v1/health`);
+
+        assert.equal(response.status, 200);
+        assert.deepEqual(await response.json(), { status: "ok" });
+        assert.equal(response.headers.get("access-control-allow-origin"), "*");
+    });
+});
+
 test("POST /usuarios rejeita dados inválidos antes do banco", async () => {
     const database = createDatabase();
 

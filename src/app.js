@@ -33,6 +33,17 @@ export function createApp(database = db) {
 
     app.disable("x-powered-by");
     app.use(helmet());
+    app.use((request, response, next) => {
+        response.header("Access-Control-Allow-Origin", "*");
+        response.header("Access-Control-Allow-Methods", "GET, POST, PUT, PATCH, DELETE, OPTIONS");
+        response.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
+
+        if (request.method === "OPTIONS") {
+            return response.sendStatus(204);
+        }
+
+        next();
+    });
     app.use(express.json({ limit: "10kb" }));
     app.use(rateLimit({
         windowMs: 15 * 60 * 1000,
@@ -41,16 +52,16 @@ export function createApp(database = db) {
         legacyHeaders: false
     }));
 
-    app.get("/health", (_request, response) => {
+    const healthRoute = (_request, response) => {
         response.json({ status: "ok" });
-    });
+    };
 
-    app.get("/usuarios", async (_request, response) => {
+    const listarUsuarios = async (_request, response) => {
         const resultado = await database.select().from(usuarios);
         response.json(resultado);
-    });
+    };
 
-    app.post("/usuarios", async (request, response) => {
+    const criarUsuario = async (request, response) => {
         const erro = validarUsuario(request.body);
 
         if (erro) {
@@ -75,7 +86,16 @@ export function createApp(database = db) {
 
             throw error;
         }
-    });
+    };
+
+    app.get("/health", healthRoute);
+    app.get("/api/v1/health", healthRoute);
+
+    app.get("/usuarios", listarUsuarios);
+    app.get("/api/v1/usuarios", listarUsuarios);
+
+    app.post("/usuarios", criarUsuario);
+    app.post("/api/v1/usuarios", criarUsuario);
 
     app.use((_request, response) => {
         response.status(404).json({ erro: "Rota não encontrada" });
