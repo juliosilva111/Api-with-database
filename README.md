@@ -135,3 +135,22 @@ As skills locais em `.github/skills/` orientam o desenvolvimento futuro:
 - `product-marketing-field-services`: orienta posicionamento, copy, fluxos e métricas para operações técnicas em campo.
 - `frontend-21st`: define padrões para o futuro frontend React com componentes reutilizáveis, temas e acessibilidade.
 - `gsap-frontend`: orienta animações GSAP com React, performance, cleanup e `prefers-reduced-motion`.
+- `saas-architecture`: orienta módulos, multi-tenancy, evolução e decisões arquiteturais.
+- `field-service-operations`: modela clientes, ordens, visitas, técnicos e execução em campo.
+- `saas-auth-and-permissions`: orienta autenticação, papéis, convites e isolamento entre empresas.
+- `api-contracts`: padroniza rotas, payloads, erros, paginação e versionamento.
+- `testing-quality`: organiza TDD, testes de API, integração, autorização e regressão.
+- `postgresql-drizzle`: orienta schema, migrations, constraints, índices e transações.
+- `application-security`: revisa validação, secrets, CORS, rate limiting, dependências e ameaças.
+- `field-service-ux`: prioriza uso mobile, acessibilidade e operação em condições de campo.
+- `pwa-offline-field-service`: orienta instalação, fila offline, sincronização e conflitos.
+- `observability-production`: orienta logs, métricas, health checks, alertas e incidentes.
+- `github-ci-cd`: define checks, builds, segurança, deploy, ambientes e rollback.
+- `saas-onboarding`: orienta ativação, convites, checklist e primeiro valor.
+- `product-analytics`: define eventos, funis, retenção e métricas com privacidade.
+- `saas-billing`: orienta planos, trials, limites, webhooks e estados de cobrança.
+- `research-filtered`: pesquisa fontes confiáveis com filtro de ruído, deduplicação e economia de tokens.
+- `creative-generation`: cria conceitos e variações de criativos para o nicho sem inventar provas.
+- `copywriting-sales`: cria copy, mensagens comerciais e propostas orientadas a dores reais.
+
+As skills de marketing e pesquisa são guias locais; não instalam serviços externos nem enviam dados do projeto para terceiros. Quando pesquisa atualizada for necessária, devem priorizar fontes primárias e retornar somente evidências relevantes.
