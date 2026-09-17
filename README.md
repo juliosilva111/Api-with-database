@@ -152,5 +152,12 @@ As skills locais em `.github/skills/` orientam o desenvolvimento futuro:
 - `research-filtered`: pesquisa fontes confiáveis com filtro de ruído, deduplicação e economia de tokens.
 - `creative-generation`: cria conceitos e variações de criativos para o nicho sem inventar provas.
 - `copywriting-sales`: cria copy, mensagens comerciais e propostas orientadas a dores reais.
+- `api-design` e `api-testing`: apoiam desenho e testes de endpoints.
+- `database`: apoia decisões de persistência e consultas.
+- `environment`: orienta configuração de ambientes e variáveis.
+- `error-handling`: padroniza tratamento e exposição de erros.
+- `security`: apoia revisões e controles de segurança.
+- `code-review`: orienta revisão de mudanças antes do merge.
+- `release`: apoia preparação e publicação de versões.
 
 As skills de marketing e pesquisa são guias locais; não instalam serviços externos nem enviam dados do projeto para terceiros. Quando pesquisa atualizada for necessária, devem priorizar fontes primárias e retornar somente evidências relevantes.
